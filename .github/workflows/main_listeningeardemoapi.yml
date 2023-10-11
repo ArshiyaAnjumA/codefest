@@ -15,12 +15,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
 
       - name: Set up Java version
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v1
         with:
-          java-version: '9'
+          java-version: '11'
 
       - name: Build with Maven
         run: mvn clean install
@@ -50,5 +49,5 @@ jobs:
         with:
           app-name: 'listeningeardemoapi'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CCD60A62CA5D4822AE20EE7E31DFA845 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A8285838A4F64B40B2057DE351C5A1C9 }}
           package: '*.jar'
